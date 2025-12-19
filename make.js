@@ -6,7 +6,7 @@ import fs from 'fs';
  */
 
 const periods = JSON.parse(fs.readFileSync('periods.json', 'utf8'));
-const persons = fs.readFileSync('persons.txt', 'utf8')
+const persons = fs.readFileSync('persons.txt', 'utf8').trim();
   .split('\n')
   .map(t => ({
     nom: t.split(' ').slice(1).join(' '),
