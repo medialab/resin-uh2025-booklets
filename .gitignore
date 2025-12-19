@@ -1,0 +1,7 @@
+node_modules
+output/fonts
+output/pdf
+output/pdf imposé
+output/*.html
+persons.txt
+.DS_Store

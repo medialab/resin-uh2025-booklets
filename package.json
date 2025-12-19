@@ -1,0 +1,14 @@
+{
+  "name": "2025_resin_uh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+  },
+  "author": "Robin de Mourat",
+  "license": "AGPL-3.0-only",
+  "description": "",
+  "dependencies": {
+    "puppeteer-html-pdf": "^4.0.8"
+  }
+}

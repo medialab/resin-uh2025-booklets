@@ -1,0 +1,342 @@
+/**
+ * GENERAL
+ */
+
+:root {
+  --font: "Edgar", Georgia, sans-serif;
+  --mono: "Geist Mono", monospace;
+}
+
+section {
+  font-family: var(--mono);
+  break-after: always;
+}
+
+@page {
+  margin : 1cm;
+}
+@page:left {
+  margin-right: 2cm;
+}
+@page:right {
+  margin-left: 2cm;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font);
+}
+
+/**
+ * COVER
+ */
+.cover {
+  counter-reset: pageNumber 1;
+  counter-increment: pageNumber;
+  page: cover;
+
+}
+
+@page cover {
+  margin: 0;
+}
+
+
+.cover-content {
+  height: 32cm;
+  padding: 4cm 2cm;
+  position: relative;
+}
+
+.cover-content-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5f7;
+  opacity: 0.2;
+  background: repeating-linear-gradient(-45deg, #23243e, #23243e 2px, #e5e5f7 2px, #e5e5f7 10px);
+}
+
+/* courtesy https://www.magicpattern.design/tools/css-backgrounds */
+.cover-content-background.type-1 {
+  background: repeating-linear-gradient(-45deg, #23243e, #23243e 2px, #e5e5f7 2px, #e5e5f7 10px);
+}
+
+.cover-content-background.type-2 {
+  background-image: linear-gradient(135deg, #23243e 25%, transparent 25%), linear-gradient(225deg, #23243e 25%, transparent 25%), linear-gradient(45deg, #23243e 25%, transparent 25%), linear-gradient(315deg, #23243e 25%, #e5e5f7 25%);
+  background-position: 4px 0, 4px 0, 0 0, 0 0;
+  background-size: 8px 8px;
+  background-repeat: repeat;
+}
+
+.cover-content-background.type-3 {
+  background-image: radial-gradient(circle at center center, #23243e, #e5e5f7), repeating-radial-gradient(circle at center center, #23243e, #23243e, 4px, transparent 8px, transparent 4px);
+  background-blend-mode: multiply;
+}
+
+.cover-content-background.type-4 {
+  background-image: linear-gradient(#23243e 0.8px, transparent 0.8px), linear-gradient(90deg, #23243e 0.8px, transparent 0.8px), linear-gradient(#23243e 0.4px, transparent 0.4px), linear-gradient(90deg, #23243e 0.4px, #e5e5f7 0.4px);
+  background-size: 20px 20px, 20px 20px, 4px 4px, 4px 4px;
+  background-position: -0.8px -0.8px, -0.8px -0.8px, -0.4px -0.4px, -0.4px -0.4px;
+}
+
+.cover-content-background.type-5 {
+  background-color: #e5e5f7;
+  opacity: 0.2;
+  background-image: linear-gradient(45deg, #23243e 50%, #e5e5f7 50%);
+  background-size: 4px 4px;
+}
+
+.cover-content-background.type-6 {
+  background-image: linear-gradient(-45deg, #e5e5f7, #e5e5f7 50%, #23243e 50%, #23243e);
+  background-size: 4px 4px;
+}
+
+.cover-content-background.type-7 {
+  background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#23243e 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #23243e 0.8px, #e5e5f7 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+}
+
+.cover-content h2 {
+  margin-top: 7cm;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.cover-content h1 {
+  font-size: 60px;
+}
+
+.cover-content h3 {
+  font-size: 24px;
+}
+
+.cover img {
+  max-height: 50px;
+}
+
+.cover-content .image-container {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.intro em {
+  font-size: 12px;
+}
+
+
+/**
+ * DASHED PAGE
+ */
+
+.dashed-page {
+  page: dashed-page;
+  counter-increment: pageNumber;
+}
+
+@page dashed-page {
+  --dot-bg: white;
+  --dot-color: grey;
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background-image: url("../assets/dot-pattern.png");
+  @bottom-center {
+    content: counter(pageNumber);
+    text-transform: uppercase;
+  }
+}
+
+.centered-blank-text {
+  width: 100%;
+  height: 27cm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+}
+
+.centered-blank-text h5 {
+  width: 80%;
+}
+
+.period-name .period {
+  padding: 0px 5px 4px 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  position: relative;
+  top: 0px;
+  font-weight: 400;
+}
+
+/**
+ * PARTITION LEFT
+ */
+.period-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  height: 23cm;
+}
+
+.period-container .item-container {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+}
+
+.period-container .item-container:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.period-container .item-container:nth-child(2) {
+  flex: 4;
+}
+
+.period-container .item-container:nth-child(3) {
+  flex: 2;
+}
+
+.period-container.big {
+  height: 25cm;
+}
+
+.period-container .item-container h4 {
+  margin: 0;
+  display: inline-block;
+  left: 25px;
+  position: relative;
+}
+
+.period-container .item-container h4 span {
+  border: 1px solid grey;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+  position: relative;
+  top: -5px;
+}
+
+.period-container .item-container p {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 0;
+  flex: 1;
+}
+
+/**
+ * PARTITION
+ */
+.partition-container {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 25cm;
+}
+
+.columns-headers-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.columns-headers-container .column {
+  flex: 1;
+}
+
+.columns-headers-container .column:not(:first-of-type) {
+  padding-left: 10px;
+}
+
+.columns-headers-container .column:not(:last-of-type) {
+  border-right: 1px solid grey;
+}
+
+.columns-headers-container .column h4 {
+  margin: 0;
+  text-decoration: underline;
+  font-variant-caps: small-caps;
+  font-size: 14px;
+}
+
+.columns-headers-container .column p {
+  font-size: 12px;
+}
+
+.columns-writing-space {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.columns-writing-space .column {
+  flex: 1;
+}
+
+.columns-writing-space .column:not(:first-of-type) {
+  padding-left: 10px;
+}
+
+.columns-writing-space .column:first-of-type,
+.columns-writing-space .column:nth-child(2) {
+  border-right: 1px dashed grey;
+}
+
+
+.columns-writing-space .footprint {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  transform-origin: top left;
+  rotate: -90deg;
+  font-size: 6.5px;
+}
+
+.columns-footer {
+  padding-top: 20px;
+}
+
+/**
+ * CHUTIER
+ */
+
+.chutier-table {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 20cm;
+}
+
+.chutier-table.standalone {
+  height: 24cm;
+}
+
+.chutier-table .column {
+  flex: 1;
+  text-align: center;
+  font-variant-caps: small-caps;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.chutier-table .column:not(:last-of-type) {
+  border-right: 1px solid grey;
+}
+
+.tool-box {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.tool-box p {
+  margin: 0;
+}
+
+.tool-box ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
