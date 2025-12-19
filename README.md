@@ -13,7 +13,7 @@ echo michel > persons.txt
 
 Then: 
 * edit `persons.txt` by adding the names of your event's participants
-* edit `periods.json`, `questions_words_in.txt` and `questions_words_out.txt` to feet your needs
+* edit `periods.json`, `questions_words_in.txt` and `questions_words_out.txt` to fit your needs
 
 Then, if you have Resin's fonts, create a `fonts` folder in the `output` folder, then add `Edgar` and `GesitMono` fonts folders for the corresponding fonts. If you don't, handbooks will be generated with your browser's default fonts.
 
