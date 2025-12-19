@@ -1,7 +1,7 @@
 {
   "name": "2025_resin_uh",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "make.js",
   "type": "module",
   "scripts": {
   },
