@@ -9,6 +9,5 @@
   "license": "AGPL-3.0-only",
   "description": "",
   "dependencies": {
-    "puppeteer-html-pdf": "^4.0.8"
   }
 }
